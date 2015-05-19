@@ -1,3 +1,7 @@
 class List < ActiveRecord::Base
-  attr_accessible :name, :thoughts_count, :weight
+  attr_accessible :name
+
+  validates :name, presence: true
+
+  has_many :thoughts
 end

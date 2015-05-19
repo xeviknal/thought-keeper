@@ -9,7 +9,7 @@ class ThoughtsController < ApplicationController
 
   def create
     @list = List.find params[:list_id]
-    @list.thoughts.build(params[:thought])
+    @list.build_thought(params[:thought])
 
     if @list.save
       render json: @list.thoughts

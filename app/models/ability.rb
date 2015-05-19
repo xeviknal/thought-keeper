@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     if user
       can :manage, List
-      can :manage, Task
+      can :manage, Thought
     end
   end
 end

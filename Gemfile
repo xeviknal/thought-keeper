@@ -11,6 +11,15 @@ gem 'devise'
 # Database
 gem 'sqlite3'
 
+# Server
+gem 'thin'
+
+# Development & Test
+group :development, :test do
+  gem 'pry'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

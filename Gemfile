@@ -5,6 +5,9 @@ gem 'rails', '3.2.21'
 # Persmission
 gem 'cancan'
 
+# User managing system
+gem 'devise'
+
 # Database
 gem 'sqlite3'
 

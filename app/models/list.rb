@@ -4,4 +4,5 @@ class List < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :thoughts
+  belongs_to :user
 end

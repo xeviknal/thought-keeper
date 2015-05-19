@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: :create
   load_and_authorize_resource
 
   def index
@@ -11,7 +12,7 @@ class ListsController < ApplicationController
     if @list.save
       render json: @list
     else
-      render :ko
+      render status: 500, json: { errors: @list.errors.full_messages }
     end
   end
 end

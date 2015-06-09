@@ -1,0 +1,10 @@
+h1 Realm
+
+div ng-controller="ListCtrl"
+  form
+    input type="text" ng-model="newList.name"
+    input type="submit" value="Add"
+
+  ul
+    li ng-repeat="entry in entries"
+      |{{entry.name}}

@@ -5,6 +5,8 @@ div ng-controller="ListCtrl"
     input type="text" ng-model="newList.name"
     input type="submit" value="Add"
 
+  h2
+    |{{lists.length}} thougths
   ul
-    li ng-repeat="entry in entries"
-      |{{entry.name}}
+    li ng-repeat="list in lists"
+      |{{list.name}}

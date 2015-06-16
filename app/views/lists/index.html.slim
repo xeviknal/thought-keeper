@@ -1,12 +1,26 @@
 h1 Realm
 
-div ng-controller="ListCtrl"
-  form
-    input type="text" ng-model="newList.name"
-    input type="submit" value="Add"
+.row ng-controller="ListCtrl"
+  .col-md-12
+    ' Serach:
+    input ng-model="query"
+    ' Order by:
+    select ng-model="orderProp"
+      option value="name" Alphabetical
+      option value="-weight" Importance
 
-  h2
-    |{{lists.length}} thougths
-  ul
-    li ng-repeat="list in lists"
-      |{{list.name}}
+  .col-md-10
+    form
+      input type="text" ng-model="newList.name"
+      input type="submit" value="Add"
+
+    h2
+      ' {{lists.length}} thougths
+      | for {{query}}
+
+    ul
+      li ng-repeat="list in lists | filter:query | orderBy:orderProp"
+        a href="#show"
+          | {{list.name}}
+          span
+            | ({{list.weight}})
